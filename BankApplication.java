@@ -1,4 +1,4 @@
-package com.jdt8.bank;
+package com.ghina.Bank_Team2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,10 +10,10 @@ import org.springframework.web.filter.CorsFilter;
 import java.util.Arrays;
 
 @SpringBootApplication
-public class BankApplication {
+public class BankTeam2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BankApplication.class, args);
+		SpringApplication.run(BankTeam2Application.class, args);
 	}
 
 	@Bean
@@ -32,4 +32,3 @@ public class BankApplication {
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
 
-}
