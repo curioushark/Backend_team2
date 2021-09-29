@@ -1,4 +1,4 @@
-package com.jdt8.bank.entity;
+package com.ghina.Bank_Team2.entity;
 
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
@@ -12,7 +12,7 @@ public class BaseEntity {
 
     private Date createDateTime;
 
-    private String updatedBy;
+    private String updateBy;
 
     private Date updatedDateTime;
 
@@ -32,12 +32,12 @@ public class BaseEntity {
         this.createDateTime = createDateTime;
     }
 
-    public String getUpdatedBy() {
-        return updatedBy;
+    public String getUpdateBy() {
+        return updateBy;
     }
 
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
     }
 
     public Date getUpdatedDateTime() {
@@ -52,13 +52,12 @@ public class BaseEntity {
     private void onCreate() {
         this.createDateTime = new Date();
         this.createdBy = "admin";
-        this.updatedBy = this.createdBy;
-        this.updatedDateTime = this.createDateTime;
+        this.updateBy = this.createdBy;
+        this.updatedDateTime =  this.createDateTime;
     }
-
     @PreUpdate
-    private void onUpdate() {
-        this.updatedBy = "admin";
+    private void onUpdate(){
+        this.updateBy = "admin";
         this.updatedDateTime = new Date();
     }
 
