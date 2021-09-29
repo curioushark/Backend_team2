@@ -1,7 +1,7 @@
-package com.jdt8.bank.service;
+package com.ghina.Bank_Team2.service;
 
-import com.jdt8.bank.entity.Customer;
-import com.jdt8.bank.repository.CustomerRepository;
+import com.ghina.Bank_Team2.entity.Customer;
+import com.ghina.Bank_Team2.repository.CustomerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,19 +13,17 @@ import java.util.List;
 public class CustomerService {
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private CustomerRepo customerRepo;
 
-    public Object saveCustomer(Customer cust){
-        List<Customer> lstcst = customerRepository.findAll();
-        for(Customer c : lstcst){
-            if(c.getNik()== cust.getNik()||c.getEmail().equals(cust.getEmail())){
+    public Object saveCustomer (Customer cust){
+        List<Customer> lstcst = customerRepo.findAll();
+        for (Customer c : lstcst){
+            if (c.getNik()== cust.getNik() || c.getEmail().equals(cust.getEmail())){
                 return false;
             }
         }
         cust.setJoinDate(Date.valueOf(LocalDate.now()));
-        customerRepository.save(cust);
+        customerRepo.save(cust);
         return true;
     }
-
-
 }
