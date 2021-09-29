@@ -1,14 +1,13 @@
-package com.jdt8.bank.entity;
+package com.ghina.Bank_Team2.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.UUID;
 
 @Entity
-@Table(name ="mst_accounts")
-public class Accounts extends BaseEntity {
+@Table(name = "mst_account")
+public class Account {
 
     @Id
     private String id;
@@ -19,20 +18,15 @@ public class Accounts extends BaseEntity {
 
     private int pin;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-mm-dd")
     @Temporal(TemporalType.DATE)
     private Date dateOpened;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-mm-dd")
     @Temporal(TemporalType.DATE)
     private Date dateClosed;
 
-    private int balance;
-
     public String getId() {
-        if(id==null || id.equals("")){
-            id = UUID.randomUUID().toString();
-        }
         return id;
     }
 
@@ -44,8 +38,8 @@ public class Accounts extends BaseEntity {
         return customer;
     }
 
-    public void setCustomer(Customer cust) {
-        this.customer = cust;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public int getAccNumber() {
@@ -78,13 +72,5 @@ public class Accounts extends BaseEntity {
 
     public void setDateClosed(Date dateClosed) {
         this.dateClosed = dateClosed;
-    }
-
-    public int getBalance() {
-        return balance;
-    }
-
-    public void setBalance(int balance) {
-        this.balance = balance;
     }
 }
