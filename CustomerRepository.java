@@ -1,11 +1,10 @@
-package com.jdt8.bank.repository;
+package com.ghina.Bank_Team2.repository;
 
-import com.jdt8.bank.entity.Customer;
+import com.ghina.Bank_Team2.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface CustomerRepository extends JpaRepository<Customer,String> {
-
-   List<Customer> findByNik(int nik);
+public interface CustomerRepo extends JpaRepository<Customer, String> {
+    List<Customer> findByNik(int nik);
 }
