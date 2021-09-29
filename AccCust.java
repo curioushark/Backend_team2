@@ -1,4 +1,10 @@
-package com.jdt8.bank.entity.temp;
+package com.ghina.Bank_Team2.entity.temp;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import java.util.Date;
 
 public class AccCust {
 
@@ -6,7 +12,7 @@ public class AccCust {
 
     private int nik;
 
-    private String fullname;
+    private String fullName;
 
     private String email;
 
@@ -16,7 +22,27 @@ public class AccCust {
 
     private int pin;
 
-    private int balance;
+    private Long balance;
+
+    private String accId;
+
+    private Long amount;
+
+    private String toFrom;
+
+    @JsonFormat(pattern = "yyyy-mm-dd")
+    @Temporal(TemporalType.DATE)
+    private Date date;
+
+    private String type;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public int getNik() {
         return nik;
@@ -26,24 +52,16 @@ public class AccCust {
         this.nik = nik;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {
         return email;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public void setEmail(String email) {
@@ -74,11 +92,36 @@ public class AccCust {
         this.pin = pin;
     }
 
-    public int getBalance() {
+    public Long getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(Long balance) {
         this.balance = balance;
     }
+
+    public String getAccId() {
+        return accId;
+    }
+
+    public void setAccId(String accId) {
+        this.accId = accId;
+    }
+
+    public Long getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Long amount) {
+        this.amount = amount;
+    }
+
+    public String getToFrom() {
+        return toFrom;
+    }
+
+    public void setToFrom(String toFrom) {
+        this.toFrom = toFrom;
+    }
+
 }
